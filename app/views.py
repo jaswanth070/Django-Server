@@ -1,7 +1,8 @@
 from django.shortcuts import render,HttpResponse
-
+from django.views.decorators.csrf import csrf_protect 
 
 # Create your views here.
+@csrf_protect
 def home(request):
     if request.method == 'POST':
         data = {}
@@ -47,7 +48,7 @@ def home(request):
 
     return render(request,'home.html')
 
-
+@csrf_protect
 def download(request,res,name,bld_grp,phone1):
     return render(request,'display.html',{'data':res,'name':name,"bld_grp":bld_grp,"em_ph":phone1})
 
