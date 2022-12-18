@@ -44,8 +44,8 @@ def home(request):
         # res.append('Medical Condition : ' + str(med_cond))
 
         # ans = '\n'.join(res)
-        return download(request,res,name,bld_grp,phone1)
-        # return render(request,'display.html',{'data':res,'name':name,"bld_grp":bld_grp,"em_ph":phone1})
+        # return download(request,res,name,bld_grp,phone1)
+        return render(request,'display.html',{'data':res,'name':name,"bld_grp":bld_grp,"em_ph":phone1})
 
     return render(request,'home.html')
 
